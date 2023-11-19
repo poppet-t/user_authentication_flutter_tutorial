@@ -43,9 +43,9 @@ class _SignUpState extends State<SignUp> with Func {
                   height: 40,
                   width: MediaQuery.of(context).size.width * 0.8,
                   child: ElevatedButton(
-                      onPressed: () async {
+                      onPressed: () {
                         try {
-                          await signUpWithEmailAndPassword(
+                          signUpWithEmailAndPassword(
                               emailController.text, passwordController.text);
                           if (context.mounted) {
                             callCustomStatusAlert(context,

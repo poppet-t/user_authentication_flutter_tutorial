@@ -22,9 +22,10 @@ class _GoogleAuthenticationState extends State<GoogleAuthentication> {
       child: SignInButton(
         buttonType: ButtonType.google,
         width: MediaQuery.of(context).size.width,
-        onPressed: () async {
+        onPressed: () {
           try {
-            final UserCredential userCredential = await signInWithGoogle();
+            final UserCredential userCredential =
+                signInWithGoogle() as UserCredential;
             if (context.mounted) {
               Navigator.push(
                   context,

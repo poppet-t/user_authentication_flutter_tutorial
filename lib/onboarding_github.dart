@@ -21,9 +21,10 @@ class _GithubAuthenticationState extends State<GithubAuthentication> with Func {
       child: SignInButton(
         buttonType: ButtonType.github,
         width: MediaQuery.of(context).size.width,
-        onPressed: () async {
+        onPressed: () {
           try {
-            UserCredential userCredential = await signInWithGithub();
+            UserCredential userCredential =
+                signInWithGithub() as UserCredential;
             if (context.mounted) {
               Navigator.push(
                   context,

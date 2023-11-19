@@ -22,9 +22,10 @@ class _FacebookAuthenticationState extends State<FacebookAuthentication> {
       child: SignInButton(
         buttonType: ButtonType.facebook,
         width: MediaQuery.of(context).size.width,
-        onPressed: () async {
+        onPressed: () {
           try {
-            final UserCredential userCredential = await signInWithFacebook();
+            final UserCredential userCredential =
+                signInWithFacebook() as UserCredential;
             if (context.mounted) {
               Navigator.push(
                   context,
@@ -36,7 +37,7 @@ class _FacebookAuthenticationState extends State<FacebookAuthentication> {
                           )));
             }
           } catch (e) {
-             StatusAlert.show(context,
+            StatusAlert.show(context,
                 duration: const Duration(seconds: 2),
                 title: 'User Authentication',
                 subtitle: e.toString(),

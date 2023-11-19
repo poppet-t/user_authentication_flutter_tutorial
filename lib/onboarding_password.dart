@@ -39,11 +39,12 @@ class _PasswordAuthenticationState extends State<PasswordAuthentication>
         Align(
             alignment: Alignment.centerRight,
             child: ElevatedButton(
-                onPressed: () async {
+                onPressed: () {
                   try {
                     final UserCredential userCredential =
-                        await signInWithEmailAndPassword(
-                            emailController.text, passwordController.text);
+                        signInWithEmailAndPassword(
+                                emailController.text, passwordController.text)
+                            as UserCredential;
 
                     if (context.mounted) {
                       Navigator.push(

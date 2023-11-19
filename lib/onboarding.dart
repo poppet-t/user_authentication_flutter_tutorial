@@ -76,8 +76,8 @@ class _OnboardingState extends State<Onboarding> with Func {
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.yellow,
                             shape: const StadiumBorder()),
-                        onPressed: () async {
-                          bool success = await signInWithBiometrics(context);
+                        onPressed: () {
+                          bool success = signInWithBiometrics(context) as bool;
                           if (success) {
                             if (context.mounted) {
                               Navigator.push(
